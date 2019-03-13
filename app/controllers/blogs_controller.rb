@@ -16,7 +16,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = Blog.new(set_params)
+    @blog = current_user.blogs.build(set_params)
     if @blog.save
       redirect_to blogs_path
     else
@@ -29,7 +29,7 @@ class BlogsController < ApplicationController
   end
 
   def update
-    @blog = Blog.find(params[:id])
+    @blog = current_user.blogs.build(set_params)
     if @blog.update(set_params)
       redirect_to blogs_path
     else
@@ -44,7 +44,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog=Blog.find(params[:id])
     @blog.destroy
-    redirect_to blogs_path,flash[:notice]="deleted"
+    redirect_to blogs_path
   end
 
   private
