@@ -1,0 +1,30 @@
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.row{
+  margin:0 15px;
+}
+
+.jumbotron{
+  padding:20px;
+  text-align:center;
+}
+
+.blog_section{
+  margin-bottom:10px;
+}
+
+.content_row{
+  height:200px;
+  margin-bottom:20px;
+}
+.content_row>textarea{
+  height:180px;
+}
+
+.submit_btn{
+  display: block;
+  margin:0 auto;
+  width:100px;
+}

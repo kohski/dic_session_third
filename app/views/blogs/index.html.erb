@@ -1,0 +1,20 @@
+<h1>ブログ一覧</h1>
+<table class="table">
+  <tr class="row">
+    <th class="col-sm-2">title</th>
+    <th class="col-sm-7">content</th>
+    <th class="col-sm-1">detale</th>
+    <th class="col-sm-1">edt</th>
+    <th class="col-sm-1">dlt</th>
+  </tr>
+  <% @blogs.each do |b|%>
+    <tr class="row">
+      <td class="col-sm-offset-1 col-sm-2"><%= b.title %></td>
+      <td class="col-sm-7"><%= b.content %></td>
+      <td class="col-sm-1"><%= link_to "dtl",blog_path(b.id),class:'btn btn-default'%></td>
+      <td class="col-sm-1"><%= link_to "edt",edit_blog_path(b.id),class:'btn btn-info' %></td>
+      <td class="col-sm-1"><%= link_to "dtl",blog_path(b.id),method: :delete,class:'btn btn-danger' %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to "new entry",new_blog_path,class: 'btn btn-info'%>

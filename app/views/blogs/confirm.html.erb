@@ -1,0 +1,13 @@
+<%= form_with(model: @blog,local: true) do |f| %>
+  <%= f.hidden_field :title %>
+  <p><%=@blog.title %></p>
+  <%= f.hidden_field :content %>
+  <p><%=@blog.content %></p>
+  <%= f.submit 'submit'%>
+<% end %>
+
+<%= form_with(model: @blog,local: true,url: new_blog_path,method: :get) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "back",name:"back" %>
+<% end %>
