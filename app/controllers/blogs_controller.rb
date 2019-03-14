@@ -3,9 +3,15 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
   end
 
+  # def show
+  #   @blog = Blog.find(params[:id])
+  # end
+
   def show
     @blog = Blog.find(params[:id])
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
+
 
   def new
     if params[:back]
